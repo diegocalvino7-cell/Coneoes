@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+.about-imageTurma-img{
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
 :root {
 	--green-900: #0b3d2e;
 	--green-700: #166a44;
