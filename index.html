@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Simples</title>
+    <title>Projeto 802 • Conexões Ambientais</title>
+    <meta name="theme-color" content="#166a44">
+    <meta name="description" content="Conceitos ambientais explicados de forma simples: Amazônia, mudanças climáticas e COP30.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Principal">
             <div class="nav-container">
-                <h1 class="logo">Projeto 802 </h1>
-                <ul class="nav-menu">
+                <h1 class="logo">Projeto 802</h1>
+                <ul class="nav-menu" id="primary-menu">
                     <li><a href="#home" class="nav-link">Início</a></li>
                     <li><a href="#about" class="nav-link">Sobre</a></li>
                     <li><a href="#services" class="nav-link">Nosso Tema</a></li>
                     <li><a href="#contact" class="nav-link">Sugestão</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -29,23 +31,23 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h2>Bem-vindo ao Nosso Trabalho</h2>
-                <p>Um site simples e moderno criado para a demonstração do nosso trabalho do Projeto Conexões!</p>
-                <button class="cta-button" onclick="scrollToSection('about')">Saiba Mais</button>
+                <h2>Conexões Ambientais</h2>
+                <p>Aprenda conceitos ambientais essenciais e como pequenas ações geram grandes impactos.</p>
+                <button class="cta-button" onclick="scrollToSection('about')">Como ajudar o planeta</button>
             </div>
         </section>
 
         <section id="about" class="section">
             <div class="container">
-                <h2>Sobre Nós</h2>
+                <h2>Sobre o Projeto</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Este é um site simples criado para demonstrar um pouco do nosso trabalho. Utilizamos tecnologias modernas para criar uma experiência responsiva e interativa.</p>
-                        <p>O design é limpo, moderno e totalmente responsivo, funcionando perfeitamente em dispositivos móveis, tablets e desktops.</p>
+                        <p>Este projeto tem como objetivo explicar, de forma clara e visual, temas ambientais como desmatamento, reciclagem, mudanças climáticas e eventos globais.</p>
+                        <p>Usamos linguagem simples, visual acessível e exemplos práticos para incentivar atitudes sustentáveis no dia a dia.</p>
                     </div>
                     <div class="about-image">
                         <div class="placeholder-image">
-                            <span>Imagem</span>
+                            <img src="assets/turma.jpg" class="about-imageTurma-img" alt="Imagem de Turma">
                         </div>
                     </div>
                 </div>
@@ -54,25 +56,25 @@
 
         <section id="services" class="section services">
             <div class="container">
-                <h2>Nosso Trabalho</h2>
+                <h2>Conceitos Ambientais</h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">🌳</div>
-                        <h3>Amazônia</h3>
-                        <p>Estaremos falando um pouco sobre os problemas ambientais na Amazônia.</p>
-                        <a href="https://www.flaticon.com/free-icons/save-the-planet" target="_blank">Clique aqui para abrir o link</a>
+                        <h3>Florestas e Amazônia</h3>
+                        <p>Florestas absorvem CO₂, regulam o clima e abrigam biodiversidade. O desmatamento acelera o aquecimento global.</p>
+                        <a href="https://mapbiomas.org/" target="_blank" rel="noopener noreferrer">Dados de cobertura florestal (MapBiomas)</a>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">♻️</div>
-                        <h3>Meio Ambiente</h3>
-                        <p>Vamos falar tambem um pouco sobre as mudanças climaticas.</p>
-                        <a href="https://www.flaticon.com/free-icons/save-the-planet" target="_blank">Clique aqui para abrir o link</a>
+                        <h3>Resíduos e Reciclagem</h3>
+                        <p>Separar corretamente materiais e reduzir o consumo diminui a poluição, economiza recursos e energia.</p>
+                        <a href="https://www.wwf.org.br/" target="_blank" rel="noopener noreferrer">Guias de reciclagem (WWF)</a>
                     </div>
                     <div class="service-card">
-                        <img src="assets/save-the-planet.png" class="service-icon-img"></img>
-                        <h3>COP30</h3>
-                        <p>Vamos dar um breve resumo sobre a COP30.</p>
-                        <a href="https://www.flaticon.com/free-icons/save-the-planet" target="_blank">Clique aqui para abrir o link</a>
+                        <img src="assets/save-the-planet.png" class="service-icon-img" alt="Ícone planeta sendo protegido">
+                        <h3>Clima e COP30</h3>
+                        <p>Conferências do clima reúnem países para reduzir emissões. A COP30 foca em metas mais ambiciosas e justiça climática.</p>
+                        <a href="https://unfccc.int/" target="_blank" rel="noopener noreferrer">UNFCCC: negociações climáticas</a>
                     </div>
                 </div>
             </div>
@@ -88,10 +90,10 @@
                         <p>📞 (21) 967432905</p>
                         <p>📍 Rio de Janeiro RJ</p>
                     </div>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Seu Nome" required>
-                        <input type="email" placeholder="Seu Email" required>
-                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                    <form class="contact-form" aria-label="Formulário de sugestões">
+                        <input type="text" placeholder="Seu Nome" name="nome" autocomplete="name" required>
+                        <input type="email" placeholder="Seu Email" name="email" autocomplete="email" required>
+                        <textarea placeholder="Sua Mensagem" name="mensagem" rows="5" required></textarea>
                         <button type="submit">Enviar Mensagem</button>
                     </form>
                 </div>
@@ -101,10 +103,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Meu Site Simples. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Meu Site Simples CESF RJ Projeto Conexões. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

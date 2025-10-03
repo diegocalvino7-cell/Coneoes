@@ -1,3 +1,88 @@
+// Acessibilidade e navegação
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+	hamburger.addEventListener('click', () => {
+		const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+		hamburger.setAttribute('aria-expanded', String(!expanded));
+		hamburger.setAttribute('aria-label', expanded ? 'Abrir menu' : 'Fechar menu');
+		navMenu.classList.toggle('active');
+	});
+
+	// Fecha ao clicar em um link
+	navMenu.querySelectorAll('.nav-link').forEach(link => {
+		link.addEventListener('click', () => {
+			navMenu.classList.remove('active');
+			hamburger.setAttribute('aria-expanded', 'false');
+			hamburger.setAttribute('aria-label', 'Abrir menu');
+		});
+	});
+}
+
+// Scroll suave sem dependências
+function scrollToSection(sectionId) {
+	const element = document.getElementById(sectionId);
+	if (element) {
+		element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
+}
+
+// Ativar foco visível com teclado
+let usingKeyboard = false;
+window.addEventListener('keydown', (e) => {
+	if (e.key === 'Tab') usingKeyboard = true;
+});
+window.addEventListener('mousedown', () => { usingKeyboard = false; });
+
+document.addEventListener('focusin', (e) => {
+	if (usingKeyboard) e.target.classList.add('focus-visible');
+});
+document.addEventListener('focusout', (e) => {
+	e.target.classList?.remove('focus-visible');
+});
+
+// Scroll spy simples
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveLink() {
+	let current = '';
+	sections.forEach(section => {
+		const top = section.offsetTop - 140;
+		if (scrollY >= top) current = section.id;
+	});
+
+	navLinks.forEach(link => {
+		link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+	});
+}
+
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink);
+
+// Formulário fake submit (feedback)
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+	contactForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const button = contactForm.querySelector('button');
+		const original = button.textContent;
+		button.disabled = true;
+		button.textContent = 'Enviando...';
+		setTimeout(() => {
+			button.textContent = 'Mensagem enviada!';
+			button.style.background = '#2fbf71';
+			setTimeout(() => {
+				button.textContent = original;
+				button.style.background = '';
+				button.disabled = false;
+				contactForm.reset();
+			}, 1600);
+		}, 1200);
+	});
+}
+
 // Menu mobile toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
