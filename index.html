@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Simples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">Projeto 802 </h1>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#services" class="nav-link">Nosso Tema</a></li>
+                    <li><a href="#contact" class="nav-link">Sugestão</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Bem-vindo ao Nosso Trabalho</h2>
+                <p>Um site simples e moderno criado para a demonstração do nosso trabalho do Projeto Conexões!</p>
+                <button class="cta-button" onclick="scrollToSection('about')">Saiba Mais</button>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Este é um site simples criado para demonstrar um pouco do nosso trabalho. Utilizamos tecnologias modernas para criar uma experiência responsiva e interativa.</p>
+                        <p>O design é limpo, moderno e totalmente responsivo, funcionando perfeitamente em dispositivos móveis, tablets e desktops.</p>
+                    </div>
+                    <div class="about-image">
+                        <div class="placeholder-image">
+                            <span>Imagem</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container">
+                <h2>Nosso Trabalho</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🌳</div>
+                        <h3>Amazônia</h3>
+                        <p>Estaremos falando um pouco sobre os problemas ambientais na Amazônia.</p>
+                        <a href="https://www.flaticon.com/free-icons/save-the-planet" target="_blank">Clique aqui para abrir o link</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">♻️</div>
+                        <h3>Meio Ambiente</h3>
+                        <p>Vamos falar tambem um pouco sobre as mudanças climaticas.</p>
+                        <a href="https://www.flaticon.com/free-icons/save-the-planet" target="_blank">Clique aqui para abrir o link</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="assets/save-the-planet.png" class="service-icon-img"></img>
+                        <h3>COP30</h3>
+                        <p>Vamos dar um breve resumo sobre a COP30.</p>
+                        <a href="https://www.flaticon.com/free-icons/save-the-planet" target="_blank">Clique aqui para abrir o link</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Sugestões</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Informações de Contato</h3>
+                        <p>📧 diego.calvino7@gmail.com</p>
+                        <p>📞 (21) 967432905</p>
+                        <p>📍 Rio de Janeiro RJ</p>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu Email" required>
+                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                        <button type="submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Meu Site Simples. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
